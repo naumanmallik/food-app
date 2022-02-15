@@ -34,18 +34,20 @@ const ClientLayout = () => {
       >
         <Container maxWidth="lg">
           <Toolbar>
-            <Typography
-              variant="h6"
-              noWrap
-              component="div"
-              sx={{
-                flexGrow: 1,
-                userSelect: "none",
-                textTransform: "uppercase",
-              }}
-            >
-              Food App
-            </Typography>
+            <div style={{ flexGrow: 1, display: "flex",  }}>
+              <Typography
+                variant="h6"
+                noWrap
+                component="div"
+                sx={{
+                  userSelect: "none",
+                  textTransform: "uppercase",
+                }}
+              >
+                Food App
+              </Typography>
+              <span style={{ marginLeft: "20px", display: "flex", alignItems: "center" }}>Invoices</span>
+            </div>
 
             <Box sx={{ flexGrow: 0 }}>
               <span>Nauman Malik</span>
@@ -53,28 +55,6 @@ const ClientLayout = () => {
           </Toolbar>
         </Container>
       </AppBar>
-      <Drawer
-        variant="permanent"
-        sx={{
-          width: drawerWidth,
-          flexShrink: 0,
-          [`& .MuiDrawer-paper`]: {
-            width: drawerWidth,
-            boxSizing: "border-box",
-          },
-        }}
-      >
-        <Toolbar />
-        <Box sx={{ overflow: "auto" }}>
-          <List>
-            {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-              <ListItem button key={text}>
-                <ListItemText primary={text} />
-              </ListItem>
-            ))}
-          </List>
-        </Box>
-      </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <Toolbar />
         <Outlet />
