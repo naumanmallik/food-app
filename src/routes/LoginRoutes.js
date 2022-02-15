@@ -2,9 +2,11 @@ import LoginLayout from "../layout/Login";
 import { lazy } from "react";
 import Loadable from "../common";
 
-const LoginPage = Loadable(
-    lazy(() => import("../components/Auth/Login"))
-  );
+const LoginPage = Loadable(lazy(() => import("../components/Auth/Login")));
+
+const RegisterPage = Loadable(
+  lazy(() => import("../components/Auth/Register"))
+);
 
 const LoginRoutes = {
   path: "/",
@@ -13,6 +15,10 @@ const LoginRoutes = {
     {
       path: "/login",
       element: <LoginPage />,
+    },
+    {
+      path: "/register",
+      element: <RegisterPage />,
     },
   ],
 };

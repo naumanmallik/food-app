@@ -4,9 +4,5 @@ import DashboardRoutes from "./DashboardRoutes";
 import LoginRoutes from "./LoginRoutes";
 
 export default function Routes() {
-    return useRoutes([
-      DashboardRoutes,
-      ClientRoutes,
-      LoginRoutes
-    ])
+  return useRoutes([DashboardRoutes, ClientRoutes, LoginRoutes]);
 }
