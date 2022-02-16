@@ -1,5 +1,5 @@
 import { lazy } from "react";
-import Loadable from "../common";
+import Loadable from "../common/Loadable";
 import ClientLayout from "../layout/client";
 
 const HellowWorldPage = Loadable(

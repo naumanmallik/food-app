@@ -1,6 +1,6 @@
 import LoginLayout from "../layout/Login";
 import { lazy } from "react";
-import Loadable from "../common";
+import Loadable from "../common/Loadable";
 
 const LoginPage = Loadable(lazy(() => import("../components/Auth/Login")));
 
