@@ -39,6 +39,7 @@ const CreateMenuDialog = ({ open, handleClose }) => {
                     {...field}
                     fullWidth
                     id="name"
+                    size="small"
                     label="Name"
                     variant="outlined"
                     helperText={
@@ -62,6 +63,7 @@ const CreateMenuDialog = ({ open, handleClose }) => {
                     {...field}
                     fullWidth
                     id="description"
+                    size="small"
                     label="Description"
                     variant="outlined"
                     helperText={

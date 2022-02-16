@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Button, Container } from "@mui/material";
+import AddOutlinedIcon from '@mui/icons-material/AddOutlined';
 import CreateMenuDialog from "../../common/CreateMenuDialog";
 import classes from "./Dashboard.module.css";
 import MenuCard from "./MenuCard";
@@ -12,7 +13,7 @@ const Dashboard = () => {
   return (
     <>
       <Container maxWidth="lg" className={classes.btnRoot}>
-        <Button variant="outlined" onClick={handleOpenDialog}>
+        <Button variant="outlined" onClick={handleOpenDialog} startIcon={<AddOutlinedIcon />}>
           Create New Menu
         </Button>
       </Container>

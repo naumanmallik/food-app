@@ -4,18 +4,9 @@ import {
   CssBaseline,
   Toolbar,
   Typography,
-  IconButton,
-  Avatar,
-  Drawer,
-  ListItem,
-  ListItemIcon,
-  List,
   Container,
-  ListItemText,
 } from "@mui/material";
-import { Outlet } from "react-router-dom";
-
-const drawerWidth = 200;
+import { Link, Outlet } from "react-router-dom";
 
 const ClientLayout = () => {
   return (
@@ -27,26 +18,67 @@ const ClientLayout = () => {
         color="inherit"
         elevation={0}
         sx={{
-          bgcolor: "#24292e",
+          bgcolor: "rgb(17, 25, 54)",
           color: "#fff",
           zIndex: 1220,
         }}
       >
         <Container maxWidth="lg">
           <Toolbar>
-            <div style={{ flexGrow: 1, display: "flex",  }}>
+            <div style={{ flexGrow: 1, display: "flex" }}>
               <Typography
+                component={Link}
+                to={"/"}
                 variant="h6"
                 noWrap
-                component="div"
                 sx={{
                   userSelect: "none",
                   textTransform: "uppercase",
+                  textDecoration: "none",
+                  color: "#fff",
                 }}
               >
                 Food App
               </Typography>
-              <span style={{ marginLeft: "20px", display: "flex", alignItems: "center" }}>Invoices</span>
+              <Typography
+                component={Link}
+                to={"/"}
+                style={{
+                  marginLeft: "20px",
+                  display: "flex",
+                  alignItems: "center",
+                  textDecoration: "none",
+                  color: "#fff",
+                }}
+              >
+                Menus
+              </Typography>
+              <Typography
+                component={Link}
+                to={"/invoices"}
+                style={{
+                  marginLeft: "20px",
+                  display: "flex",
+                  alignItems: "center",
+                  textDecoration: "none",
+                  color: "#fff",
+                }}
+              >
+                Meals
+              </Typography>
+              <Typography
+                component={Link}
+                to={"/"}
+                style={{
+                  marginLeft: "20px",
+                  display: "flex",
+                  alignItems: "center",
+                  textDecoration: "none",
+                  color: "#fff",
+                }}
+              >
+                Invoices
+              </Typography>
             </div>
 
             <Box sx={{ flexGrow: 0 }}>
