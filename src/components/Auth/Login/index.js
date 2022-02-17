@@ -2,7 +2,7 @@ import * as React from "react";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
@@ -11,10 +11,13 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useForm, Controller } from "react-hook-form";
 import { userLogin } from "../../../api/user";
 import { toast } from "react-toastify";
+import { useUserContext } from "../../../context/userContext";
 
 const theme = createTheme();
 
 export default function Login() {
+  const navigate = useNavigate();
+  const { setToken, setUserData } = useUserContext();
   const {
     handleSubmit,
     control,
@@ -24,10 +27,15 @@ export default function Login() {
   const handleLogin = async (data) => {
     try {
       const res = await userLogin(data);
-      toast.success("elo")
+      toast.success("User Sign in successfully.");
+      window.localStorage.setItem("token", res?.data?.token);
+      window.localStorage.setItem("user", JSON.stringify(res?.data));
+      setToken(res?.data?.token);
+      setUserData(res?.data);
+      navigate("/");
       console.log({ res });
     } catch (error) {
-      toast.error(error?.errMsg)
+      toast.error(error?.errMsg);
       console.log(error);
     }
   };
