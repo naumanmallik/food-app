@@ -9,6 +9,8 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useForm, Controller } from "react-hook-form";
+import { userLogin } from "../../../api/user";
+import { toast } from "react-toastify";
 
 const theme = createTheme();
 
@@ -19,8 +21,15 @@ export default function Login() {
     formState: { errors },
   } = useForm();
 
-  const handleLogin = (data) => {
-    console.log(data);
+  const handleLogin = async (data) => {
+    try {
+      const res = await userLogin(data);
+      toast.success("elo")
+      console.log({ res });
+    } catch (error) {
+      toast.error(error?.errMsg)
+      console.log(error);
+    }
   };
 
   return (
